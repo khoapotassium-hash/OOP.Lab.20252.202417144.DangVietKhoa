@@ -1,0 +1,10 @@
+6.1 answers
+Question 1: What happens if the user selects “Cancel”?
+When the user selects “Cancel” in the JOptionPane.showConfirmDialog() dialog box, the method returns the value JOptionPane.CANCEL_OPTION. In the sample program, since this value is not equal to JOptionPane.YES_OPTION, the program defaults to displaying the result of the alternative option "No".
+The result dialog will display: "You've chosen: No".
+
+Question 2: How to customize the options to users, e.g. only two options: “Yes” and “No”, OR “I do” and “I don’t”?
+1. To display only "Yes" and "No" options:
+Use the optionType parameter in the JOptionPane.showConfirmDialog() method and set its value to JOptionPane.YES_NO_OPTION.
+2. To customize options with arbitrary strings (e.g., "I do" and "I don't"):
+Use the JOptionPane.showOptionDialog() method and pass an array containing the specific strings.
