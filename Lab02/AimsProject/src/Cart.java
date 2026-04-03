@@ -13,6 +13,11 @@ public class Cart {
             qtyOrdered++;
         }
     }
+    public void addDigitalVideoDisc(DigitalVideoDisc [] dvdList){
+        for (DigitalVideoDisc disc : dvdList){
+            addDigitalVideoDisc(disc);
+        }
+    }
 
     public void removeDigitalVideoDisc(DigitalVideoDisc disc){
         boolean checkdisc = false;
@@ -38,5 +43,12 @@ public class Cart {
             total += itemsOrdered[i].getCost();
         }
         return total;
+    }
+
+    public int getQtyOrdered() {
+        return qtyOrdered;
+    }
+    public DigitalVideoDisc[] getItemsOrdered() {
+        return itemsOrdered;
     }
 }
