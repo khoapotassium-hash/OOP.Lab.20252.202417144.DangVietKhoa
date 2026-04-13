@@ -18,6 +18,10 @@ public class Cart {
             addDigitalVideoDisc(disc);
         }
     }
+    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2){
+        addDigitalVideoDisc(dvd1);
+        addDigitalVideoDisc(dvd2);
+    }
 
     public void removeDigitalVideoDisc(DigitalVideoDisc disc){
         boolean checkdisc = false;
