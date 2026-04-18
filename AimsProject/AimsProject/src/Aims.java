@@ -13,16 +13,13 @@ public class Aims {
                 "Animation",18.99f);
         anOder.addDigitalVideoDisc(dvd3);
 
-        System.out.print("Total cost is: ");
-        System.out.println(anOder.totalCost());
+        System.out.println("Total cost is: " + anOder.totalCost() + " $");
 
         //Test removing
         System.out.println();
         anOder.removeDigitalVideoDisc(dvd3);
         anOder.removeDigitalVideoDisc(dvd3);
 
-        System.out.print("Total cost is: ");
-        System.out.println(anOder.totalCost());
-
+        System.out.println("Total cost is: " + anOder.totalCost() + " $");
     }
 }
