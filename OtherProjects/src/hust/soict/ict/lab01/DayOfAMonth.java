@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class DaysOfAMonth {
+public class DayOfAMonth {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int month = -1;
