@@ -1,3 +1,4 @@
+package hust.soict.ict.aims.disc;
 public class DigitalVideoDisc {
     private static int nbDigitalVideoDiscs = 0;
     private String title;

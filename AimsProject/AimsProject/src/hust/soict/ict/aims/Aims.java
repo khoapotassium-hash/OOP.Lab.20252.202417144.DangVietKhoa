@@ -1,3 +1,7 @@
+package hust.soict.ict.aims;
+import hust.soict.ict.aims.cart.Cart;
+import hust.soict.ict.aims.disc.DigitalVideoDisc;
+
 public class Aims {
     public static void main(String[] args){
         Cart anOder = new Cart();
