@@ -1,4 +1,4 @@
-import hust.soict.ict.aims.disc.DigitalVideoDisc;
+import hust.soict.ict.aims.media.DigitalVideoDisc;
 
 public class TestingPassingParamter {
     public static void main (String[] args){
