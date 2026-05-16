@@ -2,39 +2,59 @@ package hust.soict.ict.aims.media;
 
 import java.util.ArrayList;
 
-public class CompactDisc extends Disc {
+public class CompactDisc extends Disc implements Playable {
     private String artist;
     private ArrayList<Track> tracks = new ArrayList<Track>();
 
-    public CompactDisc() {
-        super();
+    public CompactDisc(int id, String title, String category, float cost, int length, String director, String artist) {
+        super(id, title, category, cost, length, director);
+        this.artist = artist;
     }
 
-    public String getArtist() {
-        return artist;
-    }
+    public String getArtist() { return artist; }
 
     public void addTrack(Track track) {
         if (!tracks.contains(track)) {
             tracks.add(track);
-        } else {
-            System.out.println("Track already exists.");
         }
     }
 
     public void removeTrack(Track track) {
         if (tracks.contains(track)) {
             tracks.remove(track);
-        } else {
-            System.out.println("Track does not exist.");
         }
     }
 
+    @Override
     public int getLength() {
         int totalLength = 0;
         for (Track track : tracks) {
             totalLength += track.getLength();
         }
         return totalLength;
+    }
+
+    public void play() {
+        if (this.getLength() > 0) {
+            System.out.println("Playing CD: " + this.getTitle() + " by " + artist);
+            System.out.println("CD length: " + this.getLength());
+            for (Track track : tracks) {
+                track.play();
+            }
+        } else {
+            System.out.println("CD cannot be played.");
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "CD - " 
+        + getTitle() + " - " 
+        + getCategory() + " - " 
+        + getDirector() + " - " 
+        + artist + " - " 
+        + getLength() 
+        + ": " 
+        + getCost() + " $";
     }
 }
