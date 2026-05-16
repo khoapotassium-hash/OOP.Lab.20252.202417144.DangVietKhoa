@@ -4,10 +4,14 @@ import hust.soict.ict.aims.media.Media;
 import java.util.ArrayList;
 
 public class Cart {
-    
+    private static final int MAX_NUMBERS_ORDERED = 20;
     private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
 
     public void addMedia(Media media) {
+        if (itemsOrdered.size() >= MAX_NUMBERS_ORDERED){
+            System.out.println("The cart is full. Cannot add more media.");
+            return;
+        }
         if (!itemsOrdered.contains(media)) {
             itemsOrdered.add(media);
             System.out.println("The media \"" + media.getTitle() + "\" has been added to cart.");
