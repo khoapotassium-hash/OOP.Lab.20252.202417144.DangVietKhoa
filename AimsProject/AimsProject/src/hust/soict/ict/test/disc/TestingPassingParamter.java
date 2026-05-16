@@ -1,10 +1,10 @@
 package hust.soict.ict.test.disc;
-import hust.soict.ict.aims.disc.DigitalVideoDisc;
+import hust.soict.ict.aims.media.DigitalVideoDisc;
 
 public class TestingPassingParamter {
     public static void main (String[] args){
-        DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
-        DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cinderella");
+        DigitalVideoDisc jungleDVD = new DigitalVideoDisc(1, "Jungle", "Animation", 19.95f, 87, "Unknown");
+        DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc(2, "Cinderella", "Animation", 18.99f, 87, "Unknown");
 
         Holder container = new Holder(jungleDVD, cinderellaDVD);
         swap(container);
@@ -31,8 +31,6 @@ public class TestingPassingParamter {
         holder.o2 = tmp;
     }
     public static void changeTitle(DigitalVideoDisc dvd, String title){
-        String oldTitle = dvd.getTitle();
         dvd.setTitle(title);
-        dvd = new DigitalVideoDisc(oldTitle);
     }
 }
