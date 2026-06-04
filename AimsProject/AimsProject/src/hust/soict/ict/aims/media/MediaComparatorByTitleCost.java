@@ -12,3 +12,4 @@ public class MediaComparatorByTitleCost implements Comparator<Media> {
         return Float.compare(m2.getCost(), m1.getCost());
     }
 }
+

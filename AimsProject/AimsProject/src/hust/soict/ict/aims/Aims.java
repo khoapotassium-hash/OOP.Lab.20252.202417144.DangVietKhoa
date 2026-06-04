@@ -1,12 +1,14 @@
 package hust.soict.ict.aims;
 
 import hust.soict.ict.aims.cart.Cart;
+import hust.soict.ict.aims.exception.PlayerException;
 import hust.soict.ict.aims.media.*;
 import hust.soict.ict.aims.store.Store;
 import java.util.Scanner;
 
 public class Aims { 
     private static int idCounter = 0;
+    private static boolean initialized = false;
 
     private static Store store = new Store();
     private static Cart cart = new Cart();
@@ -124,7 +126,7 @@ public class Aims {
         }
     }   
 
-    public static void viewStore() {
+    public static Store viewStore() {
         store.print(); 
         
         while (true) {
@@ -133,7 +135,7 @@ public class Aims {
                 int choice = scanner.nextInt();
                 scanner.nextLine();
                 
-                if (choice == 0) return; 
+                if (choice == 0) return store; 
                 handleStoreMenu(choice);
             } catch (java.util.InputMismatchException e) {
                 System.out.println("Error: Please enter a valid number.");
@@ -196,7 +198,7 @@ public class Aims {
         }
     }   
 
-    public static void handleMediaDetailsMenu(Media media) {
+    public static void handleMediaDetailsMenu(Media media) throws PlayerException {
         mediaDetailsMenu(media);
         int choice = scanner.nextInt();
         scanner.nextLine();
@@ -206,7 +208,7 @@ public class Aims {
                 break;
             case 2: 
                 if (media instanceof Playable) {
-                    ((Playable) media).play();
+                    ((Playable) media).play() ;
                 } else {
                     System.out.println("This media is not playable.");
                 }
@@ -428,7 +430,7 @@ public class Aims {
         }
     }
 
-    public static void playMediaInCart() {
+    public static void playMediaInCart() throws PlayerException {
         System.out.print("Enter Media ID to Play: ");
         int id = scanner.nextInt();
         scanner.nextLine();
@@ -463,4 +465,20 @@ public class Aims {
         cart.empty();
         }
     }
+
+    public static void initSetup() {
+        if (!initialized) {
+            initializeStore();
+            initialized = true;
+        }
+    }
+
+    public static Store getStore() {
+        return store;
+    }
+
+    public static Cart getCart() {
+        return cart;
+    }
 }
+
