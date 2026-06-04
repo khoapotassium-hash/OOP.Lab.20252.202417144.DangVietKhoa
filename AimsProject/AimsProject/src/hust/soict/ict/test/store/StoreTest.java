@@ -22,3 +22,4 @@ public class StoreTest {
         store.removeMedia(dvd3);
     }
 }
+

@@ -6,6 +6,14 @@ import java.util.List;
 public class Book extends Media {
     private List<String> authors = new ArrayList<String>();
 
+    public Book() {
+        super("", "", 0.0f);
+    }
+
+    public Book(String title, String category, float cost) {
+        super(title, category, cost);
+    }
+
     public Book(int id, String title, String category, float cost) {
         super(id, title, category, cost);
     }
@@ -31,3 +39,4 @@ public class Book extends Media {
         + getCost() + " $";
     }
 }
+

@@ -1,11 +1,16 @@
 package hust.soict.ict.aims.cart;
 
 import hust.soict.ict.aims.media.Media;
-import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Cart {
     private static final int MAX_NUMBERS_ORDERED = 20;
-    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
+
+    public ObservableList<Media> getItemsOrdered() {
+        return itemsOrdered;
+    }
 
     public void addMedia(Media media) {
         if (itemsOrdered.size() >= MAX_NUMBERS_ORDERED){
@@ -124,3 +129,4 @@ public class Cart {
         System.out.println("The cart has been sorted by Cost then Title.");
     }
 }
+

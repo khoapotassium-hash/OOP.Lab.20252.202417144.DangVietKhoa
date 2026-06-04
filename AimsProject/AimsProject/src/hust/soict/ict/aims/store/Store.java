@@ -4,6 +4,9 @@ import hust.soict.ict.aims.media.Media;
 import java.util.ArrayList;
 
 public class Store {
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
+    }
     
     private ArrayList<Media> itemsInStore = new ArrayList<Media>();
 

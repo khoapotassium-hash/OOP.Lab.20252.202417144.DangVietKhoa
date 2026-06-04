@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run Painter",
+            "request": "launch",
+            "mainClass": "hust.soict.ict.javafx.Painter",
+            "projectName": "GUIProject",
+            "vmArgs": "--module-path \"C:/Program Files/Java/JFX/javafx-sdk-25.0.3/lib\" --add-modules javafx.controls,javafx.fxml,javafx.swing"
+        }
+    ]
+}
