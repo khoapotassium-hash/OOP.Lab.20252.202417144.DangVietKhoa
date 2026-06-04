@@ -14,7 +14,6 @@ import javax.swing.BorderFactory;
 import java.awt.Color;
 
 public class NumberGrid extends JFrame {
-    private JButton[] btnNumbers = new JButton[10];
     private JButton btnReset, btnDelete;
     private JTextField tfDisplay;
 
